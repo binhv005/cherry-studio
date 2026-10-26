@@ -1,0 +1,126 @@
+.catalog {
+  padding: 0 64px;
+  background: var(--bg);
+}
+
+.catalog__banner {
+  position: relative;
+  height: 720px;
+  max-height: 85vh;
+  min-height: 520px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Lưới ảnh xoay chéo như banner “Spark your start” */
+.catalog__grid {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  display: grid;
+  grid-template-columns: repeat(6, 300px);
+  gap: 22px;
+  transform: translate(-50%, -50%) rotate(-38deg);
+  animation: catalog-drift 50s linear infinite alternate;
+}
+
+@keyframes catalog-drift {
+  from {
+    transform: translate(-50%, -50%) rotate(-38deg) translateY(-60px);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-38deg) translateY(60px);
+  }
+}
+
+.catalog__grid img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.catalog__banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.catalog__content {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 88px;
+  max-width: 480px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.catalog__eyebrow {
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.catalog__content h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(40px, 4.4vw, 64px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.catalog__content > p:not(.catalog__eyebrow) {
+  margin-top: 36px;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.catalog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin-top: 66px;
+}
+
+.catalog__ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 2px;
+}
+
+@media (max-width: 839px) {
+  .catalog {
+    padding: 0 12px;
+  }
+  .catalog__content {
+    left: 24px;
+    right: 24px;
+  }
+  .catalog__content > p:not(.catalog__eyebrow) {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .catalog__actions {
+    margin-top: 36px;
+  }
+  .catalog__grid {
+    grid-template-columns: repeat(6, 180px);
+    gap: 14px;
+  }
+  .catalog__grid img {
+    width: 180px;
+    height: 240px;
+  }
+}

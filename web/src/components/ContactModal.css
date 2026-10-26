@@ -1,0 +1,160 @@
+.cm {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 17, 17, 0.55);
+  backdrop-filter: blur(6px);
+  animation: lb-in 0.3s var(--ease);
+  overflow-y: auto;
+}
+
+.cm__panel {
+  position: relative;
+  width: min(560px, 100%);
+  padding: 44px 40px 40px;
+  border-radius: 8px;
+  background: var(--paper);
+  animation: cm-up 0.45s var(--ease);
+}
+
+@keyframes cm-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.cm__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+}
+
+.cm__close:hover {
+  background: var(--bg);
+}
+
+.cm h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}
+
+.cm__lead {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.cm__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.cm__quick a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cm__quick a:hover {
+  background: var(--bg);
+}
+
+.cm__branches {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cm__branches a {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.cm__branches svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--cherry);
+}
+
+.cm__branches b {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.cm__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.cm__form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cm__form input,
+.cm__form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #faf9f8;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  resize: vertical;
+}
+
+.cm__form input:focus,
+.cm__form textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  background: #fff;
+}
+
+.cm__full {
+  grid-column: 1 / -1;
+}
+
+.cm__form .btn {
+  justify-content: center;
+}
+
+@media (max-width: 839px) {
+  .cm__panel {
+    padding: 36px 20px 24px;
+  }
+  .cm__form {
+    grid-template-columns: 1fr;
+  }
+}
