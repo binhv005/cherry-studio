@@ -1,6 +1,4 @@
 .catalog {
-  padding: 0 64px;
-  background: var(--bg);
 }
 
 .catalog__banner {
@@ -8,7 +6,6 @@
   height: 720px;
   max-height: 85vh;
   min-height: 520px;
-  border-radius: 8px;
   overflow: hidden;
   background: #000;
 }
@@ -19,7 +16,7 @@
   top: 50%;
   left: 55%;
   display: grid;
-  grid-template-columns: repeat(6, 300px);
+  grid-template-columns: repeat(9, 300px);
   gap: 22px;
   transform: translate(-50%, -50%) rotate(-38deg);
   animation: catalog-drift 50s linear infinite alternate;
@@ -53,7 +50,7 @@
   z-index: 1;
   top: 50%;
   left: 88px;
-  max-width: 480px;
+  max-width: 620px;
   transform: translateY(-50%);
   color: #fff;
 }
@@ -101,9 +98,6 @@
 }
 
 @media (max-width: 839px) {
-  .catalog {
-    padding: 0 12px;
-  }
   .catalog__content {
     left: 24px;
     right: 24px;
@@ -116,7 +110,7 @@
     margin-top: 36px;
   }
   .catalog__grid {
-    grid-template-columns: repeat(6, 180px);
+    grid-template-columns: repeat(9, 180px);
     gap: 14px;
   }
   .catalog__grid img {

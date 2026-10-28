@@ -63,7 +63,7 @@ Tông **trắng – xám – đen** theo brief; một màu nhấn cherry dùng r
 | 4 | Các dải template chạy ngang (marquee) + huy hiệu “Created in ／S” | 4 dải ảnh concept chạy ngược chiều nhau + huy hiệu **“Chụp tại ／Cherry”** |
 | 5 | “#BehindthePixels” — 2 cột so le, ảnh đen trắng, nhãn nghề, tên, trích dẫn “／…”, “Read Story ↗” | **“#KhoảnhKhắcCherry”** — 6 concept, ảnh đen trắng (hover hiện màu), nhãn, tên concept, mô tả “／…”, **“Xem bộ ảnh ↗”** |
 | 6 | Banner bo góc “Spark your start” trên nền lưới ảnh xoay chéo, nút trắng “Find your template ↗” | **“Catalog cho đối tác”** (B2B) trên lưới ảnh xoay chéo, nút **“Xem catalog ↗”** + **“Bộ ảnh mẫu ↗”** (2 link Drive) |
-| 7 | “Create your site in Studio” + nút; thanh thông báo trắng | **“Đặt lịch chụp tại Cherry”** + nút gọi hotline; thanh trắng ghi 2 cơ sở |
+| 7 | “Create your site in Studio” + nút; thanh thông báo trắng | **Bỏ** — thay bằng section **form liên hệ** cuối trang: cột trái tiêu đề + hotline / 2 cơ sở / Facebook, cột phải card form (họ tên, SĐT, concept, ngày chụp, cơ sở, lời nhắn → soạn SMS tới hotline) |
 | 8 | Footer tối: logo, slogan, mạng xã hội, cột Features / Resources / Pricing…, © | Logo, slogan, icon Facebook / Bản đồ / Điện thoại, cột **Concept / Cherry Studio / Liên hệ**, © Cherry Studio |
 | 9 | Huy hiệu cố định “Created in ／S” góc dưới trái; modal Contact | Huy hiệu cố định **hotline**; modal **Liên hệ** (thông tin 2 cơ sở + form soạn tin nhắn gửi SMS) |
 

@@ -1,6 +1,5 @@
 .stories {
   padding: 40px var(--gutter) 160px;
-  background: var(--bg);
 }
 
 .stories__inner {

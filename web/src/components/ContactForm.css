@@ -1,0 +1,109 @@
+.cform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cform label,
+.cform legend {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cform input:not([type='radio']),
+.cform select,
+.cform textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #faf9f8;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  resize: vertical;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cform input:focus,
+.cform select:focus,
+.cform textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  background: #fff;
+}
+
+.cform__full {
+  grid-column: 1 / -1;
+}
+
+.cform__submit {
+  justify-content: center;
+}
+
+.cform--full .cform__submit {
+  height: 54px;
+  font-size: 17px;
+}
+
+.cform__note {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* Chọn cơ sở */
+.cform__branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cform__branches legend {
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+.cform__radio {
+  position: relative;
+  display: grid !important;
+  gap: 2px !important;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #faf9f8;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cform__radio input {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.cform__radio span {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.cform__radio.is-checked {
+  border-color: var(--ink);
+  background: #fff;
+}
+
+@media (max-width: 839px) {
+  .cform,
+  .cform__branches {
+    grid-template-columns: 1fr;
+  }
+}

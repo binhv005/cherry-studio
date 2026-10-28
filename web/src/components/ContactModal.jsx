@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Arrow, Close, Facebook, Phone, Pin } from './Icons.jsx';
+import { useEffect } from 'react';
+import ContactForm from './ContactForm.jsx';
+import { Close, Facebook, Phone, Pin } from './Icons.jsx';
 import { useUI } from '../context/UIContext.jsx';
 import { STUDIO } from '../data/site.js';
 import './ContactModal.css';
 
 export default function ContactModal() {
   const { contactOpen, closeContact } = useUI();
-  const [form, setForm] = useState({ name: '', phone: '', message: '' });
 
   useEffect(() => {
     if (!contactOpen) return undefined;
@@ -16,15 +16,6 @@ export default function ContactModal() {
   }, [contactOpen, closeContact]);
 
   if (!contactOpen) return null;
-
-  const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
-
-  // Không có máy chủ: soạn sẵn tin nhắn SMS gửi tới hotline
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const body = `Cherry Studio ơi, mình là ${form.name} (${form.phone}). ${form.message}`.trim();
-    window.location.href = `sms:${STUDIO.hotlines[0].tel}?&body=${encodeURIComponent(body)}`;
-  };
 
   return (
     <div className="cm" role="dialog" aria-modal="true" aria-labelledby="cm-title" onClick={closeContact}>
@@ -63,23 +54,9 @@ export default function ContactModal() {
           ))}
         </ul>
 
-        <form className="cm__form" onSubmit={onSubmit}>
-          <label>
-            Họ tên
-            <input required value={form.name} onChange={set('name')} autoComplete="name" autoFocus />
-          </label>
-          <label>
-            Số điện thoại
-            <input required type="tel" value={form.phone} onChange={set('phone')} autoComplete="tel" />
-          </label>
-          <label className="cm__full">
-            Lời nhắn
-            <textarea rows="3" value={form.message} onChange={set('message')} placeholder="Ví dụ: Mình muốn chụp concept Tone hồng, bầu tháng thứ 7…" />
-          </label>
-          <button type="submit" className="btn cm__full">
-            Gửi tin nhắn <Arrow />
-          </button>
-        </form>
+        <div className="cm__form">
+          <ContactForm autoFocus />
+        </div>
       </div>
     </div>
   );

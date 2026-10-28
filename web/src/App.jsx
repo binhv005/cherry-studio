@@ -5,11 +5,12 @@ import Features from './components/Features.jsx';
 import Marquee from './components/Marquee.jsx';
 import Stories from './components/Stories.jsx';
 import Catalog from './components/Catalog.jsx';
-import Cta from './components/Cta.jsx';
+import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
 import Lightbox from './components/Lightbox.jsx';
 import ContactModal from './components/ContactModal.jsx';
 import FloatingBadge from './components/FloatingBadge.jsx';
+import Preloader from './components/Preloader.jsx';
 import { useReveal } from './hooks/useReveal.js';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
       <Header />
       <main id="main">
         <Hero />
@@ -25,7 +27,7 @@ export default function App() {
         <Marquee />
         <Stories />
         <Catalog />
-        <Cta />
+        <ContactSection />
       </main>
       <Footer />
       <FloatingBadge />

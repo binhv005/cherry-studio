@@ -7,7 +7,8 @@ export default function Catalog() {
     <section className="catalog" id="catalog">
       <div className="catalog__banner reveal">
         <div className="catalog__grid" aria-hidden="true">
-          {CATALOG_GRID.map(([slug, n], i) => (
+          {/* Lặp lại danh sách để lưới xoay phủ kín banner tràn viền */}
+          {[...CATALOG_GRID, ...CATALOG_GRID, ...CATALOG_GRID].map(([slug, n], i) => (
             <img key={i} src={img(slug, n, 's')} alt="" loading="lazy" />
           ))}
         </div>

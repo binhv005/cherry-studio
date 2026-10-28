@@ -157,7 +157,7 @@
   flex-direction: column;
   gap: 28px;
   padding: 110px 20px 40px;
-  background: var(--bg);
+  background: var(--bg) var(--pattern) 0 0 / 72px 72px;
   overflow-y: auto;
   pointer-events: auto;
   opacity: 0;

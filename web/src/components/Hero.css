@@ -15,16 +15,24 @@
   font-size: clamp(44px, 5.6vw, 82px);
   line-height: 1.02;
   letter-spacing: -0.035em;
+  /* Viền dày cùng màu nền quanh chữ đậm: chữ luôn tách khỏi ảnh / ô màu chạy phía sau */
   color: var(--ink);
+  -webkit-text-stroke: 0.16em var(--bg);
+  paint-order: stroke fill;
   pointer-events: none;
 }
 
 .hero__aside {
   position: absolute;
   z-index: 2;
-  right: 52px;
+  right: 32px;
   bottom: 22px;
-  width: 340px;
+  width: 380px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: rgba(239, 237, 235, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .hero__aside p {
@@ -59,7 +67,7 @@
 .step {
   position: absolute;
   top: calc((var(--k) - var(--n)) * var(--T) - var(--T) * 0.35);
-  left: calc(72vw - (var(--k) - var(--n)) * var(--T));
+  left: calc(72vw + var(--d) * var(--T) - (var(--k) - var(--n)) * var(--T));
   display: flex;
   height: var(--T);
 }
@@ -148,7 +156,7 @@
     padding-top: 110px;
   }
   .step {
-    left: calc(40vw - (var(--k) - var(--n)) * var(--T));
+    left: calc(40vw + var(--d) * var(--T) - (var(--k) - var(--n)) * var(--T));
     top: calc((var(--k) - var(--n)) * var(--T) + 34vh);
   }
   .hero__aside {
